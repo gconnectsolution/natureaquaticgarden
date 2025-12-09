@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Nature Aquatic Garden</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;600;800&family=Hanken+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Page styles -->
+  <link rel="stylesheet" href="aboutus.css">
+</head>
+<body>
+
+  <!-- HEADER (replicates top bar from design) -->
+  <header class="site-header">
+    <div class="header-inner">
+        <div class="brand">
+          <img
+            src="Logo.png"
+            alt="Nature Aquatic Garden logo"
+            class="brand-logo"
+          />
+          <span class="brand-name">Nature aquatic garden</span>
+        </div>
+
+        <nav class="primary-nav" aria-label="Primary">
+              <a href="home.html" class="nav-link active">Home</a>
+              <a href="products.html" class="nav-link">Products</a>
+              <a href="categories.html" class="nav-link">Categories</a>
+              <a href="aboutus.html" class="nav-link">About Us</a>
+              <a href="home.html#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="delivery-chip" aria-label="Delivery location">
+            <i class="fa-solid fa-location-dot" style="color: #000000;"></i>
+            <div class="delivery-text">
+              <span class="delivery-label">Delivery Location</span>
+              <span class="delivery-value">Banglore, 500000</span>
+            </div>
+          </div>
+          <button class="account-button" type="button" aria-label="Account">
+            <i class="fa-solid fa-user" style="color: #000000;"></i>
+          </button>
+          <div class="account-dropdown">
+            <div class="account-grid">
+              <a href="#" class="grid-item">My Account</a>
+              <a href="#" class="grid-item">My Orders</a>
+              <a href="#" class="grid-item">My Wishlist</a>
+              <a href="#" class="grid-item">My Details</a>
+              <a href="#" class="grid-item">Logout</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="page-main">
+
+    <!-- back arrow -->
+    <div class="back-row">
+      <button id="backBtn" class="back-btn" aria-label="Back to products">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+    </div>
+
+    <!-- Hero: Title + lead -->
+    <section class="about-hero">
+      <h1 class="hero-title">About us</h1>
+
+      <p class="hero-lead">
+        We are dedicated to making a positive difference in the aquatics community.
+      </p>
+
+      <p class="hero-sub">
+        Nature Aquatic Garden was established with a commitment to enhancing aquatic life and supporting our community. We focus on providing high-quality aquarium essentials and fostering a love for aquatic environments, guided by our passion for sustainability and excellence. Our goal is to serve aquarists across India with dedication and care, enriching their aquatic experiences and promoting responsible practices.
+      </p>
+    </section>
+
+    <!-- Feature grid (two-column layout with staggered items) -->
+    <h1 class="landscapes">Landscapes for Living</h1>
+    <section class="features-grid" aria-label="Why we are different">
+      <div class="feature-col left">
+        <article class="feature feature-large">
+          
+          <h3>Customized Design</h3>
+          <p>We aim to identify the perfect landscape design suiting our client's home, taste and lifestyle; and transform the design into reality.</p>
+        </article>
+
+        <article class="feature">
+          <h3>Innovative Planning</h3>
+          <p>Having built a reputation for attention to detail, our services come with innovative and customized planning to provide our clients with utmost satisfaction.</p>
+        </article>
+      </div>
+
+      <div class="feature-col right">
+        <article class="feature feature-spot">
+          <h3>Hi-Quality Materials</h3>
+          <p>Our priority is to maintain a well-balanced relationship with the environment. We design landscapes with hi-quality materials to not only add beauty to your home, but last for a lifetime.</p>
+        </article>
+
+        <article class="feature">
+          <h3>Professional Landscape Maintenance</h3>
+          <p>Nothing enhances your crib's appeal more than a beautiful landscape. Our team of professionals work closely with you in maintaining your dream living area.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA / Gallery of small product cards -->
+    <section class="offer-row">
+      <h2 class="section-heading">Experience the beauty of our offerings</h2>
+
+      <div class="cards-row">
+        <div class="prod-card">
+          <div class="thumb"></div>
+          <h4>Product 1</h4>
+          <div class="stars">★★★★★</div>
+          <div class="price">₹ 450</div>
+          <p class="short">Aquarium plants can add a vibrant and eye catching element to your aquarium.</p>
+        </div>
+
+        <div class="prod-card">
+          <div class="thumb"></div>
+          <h4>Product 2</h4>
+          <div class="stars">★★★★☆</div>
+          <div class="price">₹ 550</div>
+          <p class="short">A curated selection of premium plants and decor for your tank.</p>
+        </div>
+
+        <div class="prod-card">
+          <div class="thumb"></div>
+          <h4>Product 3</h4>
+          <div class="stars">★★★★☆</div>
+          <div class="price">₹ 650</div>
+          <p class="short">Handpicked accessories to keep your aquarium healthy and beautiful.</p>
+        </div>
+
+        <div class="prod-card">
+          <div class="thumb"></div>
+          <h4>Product 4</h4>
+          <div class="stars">★★★★★</div>
+          <div class="price">₹ 799</div>
+          <p class="short">Complete starter kits for hobbyists and professionals.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER (Contact dark band from design) -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <h3>Contact</h3>
+        <p><strong>Email:</strong> naquaticgarden@gmail.com</p>
+        <p><strong>Phone:</strong> 9995231289, 9036222862</p>
+      </div>
+
+      <div class="footer-right">
+        <img src="/mnt/data/466057dd-3591-4629-9f32-f975f9665e20.png" alt="logo" class="footer-logo">
+      </div>
+    </div>
+  </footer>
+
+  <script src="aboutus.js"></script>
+</body>
+</html>

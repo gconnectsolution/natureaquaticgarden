@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nature Aquatic Garden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400&family=Frank+Ruhl+Libre:wght@400;700&family=Georama:wght@400;700&family=Hanken+Grotesk:wght@400;600&family=Harmattan:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <header class="site-header" id="home">
+      <div class="header-inner">
+        <div class="brand">
+          <img
+            src="Logo.png"
+            alt="Nature Aquatic Garden logo"
+            class="brand-logo"
+          />
+          <span class="brand-name">Nature aquatic garden</span>
+        </div>
+
+        <nav class="primary-nav" aria-label="Primary">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="categories.html" class="nav-link">Categories</a>
+          <a href="aboutus.html" class="nav-link">About Us</a>
+          <a href="home.html#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="delivery-chip" aria-label="Delivery location">
+            <i class="fa-solid fa-location-dot" style="color: #000000;"></i>
+            <div class="delivery-text">
+              <span class="delivery-label">Delivery Location</span>
+              <span class="delivery-value">Banglore, 500000</span>
+            </div>
+          </div>
+          <button class="account-button" type="button" aria-label="Account">
+            <i class="fa-solid fa-user" style="color: #000000;"></i>
+          </button>
+          <div class="account-dropdown">
+            <div class="account-grid">
+              <a href="#" class="grid-item">My Account</a>
+              <a href="#" class="grid-item">My Orders</a>
+              <a href="#" class="grid-item">My Wishlist</a>
+              <a href="#" class="grid-item">My Details</a>
+              <a href="#" class="grid-item">Logout</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-slider" role="region" aria-label="Featured tanks">
+          <div class="hero-track" id="heroTrack">
+            <article class="hero-slide">
+              <img
+                src="./Group 1.png"
+                alt="Live plants aquascape"
+              />
+            </article>
+            <article class="hero-slide">
+              <img
+                src="./Group 2.png"
+                alt="Terrarium aquascape"
+              />
+            </article>
+            <article class="hero-slide">
+              <img
+                src="./Group 3.png"
+                alt="Premium fish food"
+              />
+            </article>
+          </div>
+        </div>
+
+        <!--<div class="hero-copy">
+          <p class="hero-kicker">Nature aquatic garden</p>
+          <h1 class="hero-headline">Shop Now</h1>
+          <p class="hero-body">
+            Discover our curated collection of high-quality fish food, turtle
+            nutrition, aquatic plants, and premium aquarium accessories.
+          </p>
+        </div>-->
+      </section>
+
+      <section class="categories" id="categories">
+        <div class="section-heading">
+          <h2>Our Categories</h2>
+          <a class="ghost-button" href="#products">
+            See More Products
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="categories-grid">
+          <article class="category-card">
+            <div class="card-image">
+              <img
+                src="./liveplants1.jpg"
+                alt="Categort 1"
+              />
+            </div>
+            <p class="card-title">Categort 1</p>
+            <p class="card-price">rs: 200</p>
+          </article>
+
+          <article class="category-card">
+            <div class="card-image">
+              <img
+                src="./minature.jpg"
+                alt="category 2"
+              />
+            </div>
+            <p class="card-title">category 2</p>
+            <p class="card-price">rs: 200</p>
+          </article>
+
+          <article class="category-card">
+            <div class="card-image">
+              <img
+                src="./rock1.jpg"
+                alt="category 3"
+              />
+            </div>
+            <p class="card-title">category 3</p>
+            <p class="card-price">rs: 200</p>
+          </article>
+
+          <article class="category-card">
+            <div class="card-image">
+              <img
+                src="./filter1.webp"
+                alt="category 4"
+              />
+            </div>
+            <p class="card-title">category 4</p>
+            <p class="card-price">rs: 200</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="top-products" id="products">
+        <div class="section-heading">
+          <h2>Top selling products</h2>
+          <a class="ghost-button" href="#more-products">
+            See More Products
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-image">
+              <img
+                src="pa1.jpg"
+                alt="Product 1"
+              />
+            </div>
+            <div class="product-text">
+              <h3>Product 1</h3>
+              <p>rs: 200</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img
+                src="or1.jpg"
+                alt="Product 2"
+              />
+            </div>
+            <div class="product-text">
+              <h3>Product 2</h3>
+              <p>rs: 200</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img
+                src="mos1.jpg"
+                alt="Product 3"
+              />
+            </div>
+            <div class="product-text">
+              <h3>Product 3</h3>
+              <p>rs: 200</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img
+                src="miniature2.jpg"
+                alt="Product 4"
+              />
+            </div>
+            <div class="product-text">
+              <h3>Product 4</h3>
+              <p>rs: 200</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="feature-row" id="services">
+        <span id="more-products" class="sr-anchor" aria-hidden="true"></span>
+        <article class="feature-card elephant">
+          <div class="feature-copy">
+            <p class="feature-label">Elephant</p>
+            <h3 class="feature-title">Rock</h3>
+            <p class="feature-price">rs /- 250</p>
+            <button class="feature-cta" type="button">Shop Now</button>
+          </div>
+          <div class="feature-figure">
+            <img
+              src="rock1.jpg"
+              alt="Elephant Rock decor"
+            />
+          </div>
+        </article>
+
+        <article class="feature-card cichlid">
+          <div class="feature-figure">
+            <img
+              src="acquafeast.jpeg"
+              alt="Aqua Feast Cichlid Feed"
+            />
+          </div>
+          <div class="feature-copy">
+            <p class="feature-label">Cichlid</p>
+            <h3 class="feature-title">Feed</h3>
+            <p class="feature-price">rs /- 350</p>
+            <button class="feature-cta outline" type="button">Shop Now</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="live-plants" id="about">
+        <div class="live-plants-media">
+          <img
+            src="liveplants1.jpg"
+            alt="Live aquatic plants"
+          />
+        </div>
+        <div class="live-plants-copy">
+          <p class="live-tag">Nature aquatic garden</p>
+          <h3>Live plants</h3>
+          <p class="live-price">rs /- 350</p>
+          <p class="live-body">
+            Healthy, vibrant aquatic plants curated to refresh your underwater
+            scape with lush greenery and oxygen-rich growth.
+          </p>
+          <button class="feature-cta light" type="button">Shop Now</button>
+        </div>
+      </section>
+    </main>
+
+    <section class="contact" id="contact">
+      <div class="contact-content">
+        <div>
+          <h2>Contact</h2>
+          <hr />
+          <p class="contact-info">
+            Email: naquaticgarden@gmail.com<br />
+            Phone: 9995231289 , 9036222862
+          </p>
+        </div>
+
+        <div class="contact-media">
+          <!--<img
+            src="assets/images/img-contact-card.png"
+            alt="Underwater aquascape"
+          />-->
+          <p class="contact-tagline">Nature acquatic garden</p>
+          <div class="contact-links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="home.js"></script>
+  </body>
+</html>
+

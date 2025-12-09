@@ -1,0 +1,414 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  background: #f6f7f9;
+}
+
+/* -------------------------
+     SIDEBAR
+-------------------------- */
+.sidebar {
+  width: 70px;
+  background: #0b2545;
+  padding: 15px 0;
+  overflow: hidden;
+  transition: width 0.28s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar.expanded {
+  width: 230px;
+}
+
+.small-logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.big-logo {
+  width: 150px;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.menu {
+  width: 100%;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  color: #bcd1e8;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.25s;
+}
+
+.menu li:hover {
+  background: #163a66;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.label {
+  opacity: 0;
+  white-space: nowrap;
+  transform: translateX(-15px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.sidebar.expanded .label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* -------------------------
+     MAIN PANEL
+-------------------------- */
+.main-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  background: #fff;
+  padding: 15px 25px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout-top {
+  background: #2b75ff;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.content {
+  padding: 25px;
+  overflow-y: auto;
+}
+
+/* -------------------------
+     PRODUCT GRID
+-------------------------- */
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 20px;
+}
+
+/* -------------------------
+     PRODUCT CARD
+-------------------------- */
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 16px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-image-group {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.product-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.delete-photo-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.product-title {
+  margin: 8px 0 4px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.product-price,
+.product-desc,
+.product-stock {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* -------------------------
+     ACTION BUTTONS
+-------------------------- */
+.product-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-all-btn,
+.upload-btn {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.edit-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.delete-all-btn {
+  background-color: #ff9800;
+  color: white;
+}
+
+.upload-btn {
+  background-color: #2b75ff;
+  color: white;
+}
+
+/* -------------------------
+     FILE UPLOAD
+-------------------------- */
+.upload-group {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.file-input {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+/* -------------------------
+     EDIT MODAL OVERLAY
+-------------------------- */
+#editModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  z-index: 2000;
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -45%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Background blur behind modal */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  z-index: 1500;
+  display: none;
+}
+
+body.modal-open::before {
+  display: block;
+}
+
+/* -------------------------
+     MODAL CONTENT
+-------------------------- */
+#editModal h2 {
+  margin-bottom: 18px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+#editModal label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#editModal input,
+#editModal textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+#editModal input:focus,
+#editModal textarea:focus {
+  border-color: #2b75ff;
+  box-shadow: 0 0 0 2px rgba(43, 117, 255, 0.2);
+}
+
+/* -------------------------
+     MODAL BUTTONS
+-------------------------- */
+#editModal button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 15px;
+  transition: background 0.2s ease;
+}
+
+/* SAVE BUTTON */
+#saveEditBtn {
+  background: #2b75ff;
+  color: white;
+  margin-right: 10px;
+}
+
+#saveEditBtn:hover {
+  background: #1d5ed6;
+}
+
+/* CANCEL BUTTON */
+#editModal .cancel-btn {
+  background: #e0e0e0;
+  color: #333;
+}
+
+#editModal .cancel-btn:hover {
+  background: #cacaca;
+}
+
+/* -------------------------
+     PRODUCT CARD BUTTONS
+-------------------------- */
+.product-card button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+/* EDIT BUTTON */
+.product-card button.edit-btn,
+.product-card button:nth-child(n)[text="Edit Product"] {
+  background: #2b75ff;
+  color: white;
+}
+
+.product-card button.edit-btn:hover,
+.product-card button:nth-child(n)[text="Edit Product"]:hover {
+  background: #1f5ed4;
+}
+
+/* DELETE ALL PHOTOS BUTTON */
+.product-card button.delete-all-btn {
+  background: #ff9800;
+  color: white;
+}
+
+.product-card button.delete-all-btn:hover {
+  background: #e68600;
+}
+
+/* DELETE SINGLE PHOTO BTN */
+.delete-photo-btn {
+  background-color: #f44336 !important;
+  color: white;
+  border: none;
+  padding: 4px 7px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.delete-photo-btn:hover {
+  background-color: #d32f2f !important;
+}
+
+/* ADD PHOTOS BUTTON */
+.product-card button.upload-btn {
+  background: #4caf50;
+  color: white;
+}
+
+.product-card button.upload-btn:hover {
+  background: #3e8f41;
+}
+
+/* FILE INPUT wrapper styling */
+.product-card input[type="file"] {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  padding: 7px;
+  border-radius: 6px;
+  font-size: 13px;
+  width: 100%;
+}

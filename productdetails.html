@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Product Details — Nature Aquatic Garden</title>
+
+  <!-- Fonts used in the Figma (closest match) -->
+  <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;600;800&family=Hanken+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="productdetails.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+        <div class="brand">
+          <img
+            src="Logo.png"
+            alt="Nature Aquatic Garden logo"
+            class="brand-logo"
+          />
+          <span class="brand-name">Nature aquatic garden</span>
+        </div>
+
+        <nav class="primary-nav" aria-label="Primary">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="categories.html" class="nav-link">Categories</a>
+          <a href="aboutus.html" class="nav-link">About Us</a>
+          <a href="home.html#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="delivery-chip" aria-label="Delivery location">
+            <i class="fa-solid fa-location-dot" style="color: #000000;"></i>
+            <div class="delivery-text">
+              <span class="delivery-label">Delivery Location</span>
+              <span class="delivery-value">Banglore, 500000</span>
+            </div>
+          </div>
+          <button class="account-button" type="button" aria-label="Account">
+            <i class="fa-solid fa-user" style="color: #000000;"></i>
+          </button>
+          <div class="account-dropdown">
+            <div class="account-grid">
+              <a href="#" class="grid-item">My Account</a>
+              <a href="#" class="grid-item">My Orders</a>
+              <a href="#" class="grid-item">My Wishlist</a>
+              <a href="#" class="grid-item">My Details</a>
+              <a href="#" class="grid-item">Logout</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </header>
+
+  <main class="page">
+    <a href="products.html" class="back-link">← Back to Products</a>
+
+    <section class="product-top">
+      <aside class="thumbs">
+        <button class="thumb active" data-src="/mnt/data/26c13123-a98f-4195-bd19-54d11ca459a1.png">
+          <img src="/mnt/data/26c13123-a98f-4195-bd19-54d11ca459a1.png" alt="thumb">
+        </button>
+        <button class="thumb" data-src="/mnt/data/26c13123-a98f-4195-bd19-54d11ca459a1.png">
+          <img src="/mnt/data/26c13123-a98f-4195-bd19-54d11ca459a1.png" alt="thumb">
+        </button>
+        <button class="thumb" data-src="/mnt/data/26c13123-a98f-4195-bd19-54d11ca459a1.png">
+          <img src="/mnt/data/26c13123-a98f-4195-bd19-54d11ca459a1.png" alt="thumb">
+        </button>
+      </aside>
+
+      <div class="hero-image-wrap">
+        <div class="hero-image">
+          <img id="mainImage" src="/mnt/data/26c13123-a98f-4195-bd19-54d11ca459a1.png" alt="Product">
+          <button id="favBtn" class="fav-btn" aria-label="favorite">♡</button>
+        </div>
+      </div>
+
+      <aside class="product-info">
+        <h1 class="product-title">Product Name</h1>
+        <p class="short-desc">Product 1 description — a short summary line that matches the design.</p>
+
+        <div class="rating-row">
+          <div class="stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <div class="rating-value">2.5/5</div>
+        </div>
+
+        <div class="price">₹ <span class="price-value">450</span></div>
+        <div class="tax-note">Local taxes included (where applicable)</div>
+
+        <div class="quantity-row">
+          <label>Quantity</label>
+          <div class="qty-control">
+            <button id="qtyMinus" class="qty-btn">−</button>
+            <span id="qtyValue" class="qty-display">1</span>
+            <button id="qtyPlus" class="qty-btn">+</button>
+          </div>
+        </div>
+
+        <button id="buyNow" class="buy-btn">Buy Now</button>
+
+        <div class="pincode-row">
+          <input id="pincode" placeholder="Enter Pincode" type="text">
+          <button id="verifyPin" class="verify-btn">Verify</button>
+        </div>
+
+        <div class="offers">
+          <h4>Available offers</h4>
+          <ul>
+            <li>Get up to ₹100 cashback on paying via Mobikwik wallet, min order value ₹699 <small class="tac">T&C</small></li>
+            <li>Use Coupon Code: WIN50 to get ₹50 off</li>
+            <li>Get up to ₹100 cashback on payments via Mobikwik UPI at Nature garden, min order value ₹699 <small class="tac">T&C</small></li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <section class="product-meta">
+      <div class="meta-col">
+        <h3>Product Details:</h3>
+        <ul>
+          <li>Plant Name - Ficus Compacta Plant</li>
+          <li>Plant Height: Upto 5 Inches</li>
+          <li>Plant Type: Bonsai</li>
+          <li>Quantity : 01</li>
+          <li>Vase Name: White Ceramic Pot</li>
+          <li>Vase Size: 4 X 5 inches</li>
+          <li>Personalization: Yes</li>
+        </ul>
+      </div>
+
+      <div class="meta-col">
+        <h3>Delivery and return policies</h3>
+        <ul>
+          <li>Order today to get by tomorrow</li>
+          <li>Returns & exchanges not accepted</li>
+          <li>Delivery cost: ₹50</li>
+          <li>Dispatched from: India</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="reviews-section">
+      <div class="reviews-left">
+        <h2>Reviews</h2>
+        <div class="avg-stars">
+          <div class="big-stars">★ ★ ★ ☆ ☆</div>
+          <div class="avg-score">2.5/5</div>
+        </div>
+      </div>
+
+      <aside class="reviews-right">
+        <div class="review">
+          <div class="review-title">User1</div>
+          <div class="review-stars">★ ★ ★ ★ ★ - 5</div>
+          <div class="review-text">Very cute, very happy with product</div>
+        </div>
+        <div class="review">
+          <div class="review-title">User2</div>
+          <div class="review-stars">★ ★ ★ ★ ★ - 5</div>
+          <div class="review-text">Very cute, very happy with product</div>
+        </div>
+        <div class="more-reviews">See more reviews →</div>
+      </aside>
+    </section>
+
+    <section class="similar-products">
+      <h2>Similar Products</h2>
+      <div class="similar-grid">
+        <article class="sim-card">
+          <img src="/mnt/data/26c13123-a98f-4195-bd19-54d11ca459a1.png" alt="">
+          <h4>Product 1</h4>
+          <div class="sim-stars">★ ★ ★ ☆ ☆</div>
+          <div class="sim-price">₹450</div>
+          <p>Aquarium plants can add a vibrant and eye catching element to your aquarium.</p>
+        </article>
+
+        <article class="sim-card">
+          <img src="/mnt/data/26c13123-a98f-4195-bd19-54d11ca459a1.png" alt="">
+          <h4>Product 2</h4>
+          <div class="sim-stars">★ ★ ★ ☆ ☆</div>
+          <div class="sim-price">₹350</div>
+          <p>Small terrarium and bonsai elements for beginner aquascaping.</p>
+        </article>
+
+        <article class="sim-card">
+          <img src="/mnt/data/26c13123-a98f-4195-bd19-54d11ca459a1.png" alt="">
+          <h4>Product 3</h4>
+          <div class="sim-stars">★ ★ ★ ☆ ☆</div>
+          <div class="sim-price">₹550</div>
+          <p>Handpicked driftwood and moss arrangements.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="contact-block">
+        <h3>Contact</h3>
+        <p>Email: naquaticgarden@gmail.com</p>
+        <p>Phone: 9995231289, 9036222862</p>
+      </div>
+      <div class="footer-brand">
+        <img src="Logo.png" alt="logo" class="brand-logo-small">
+      </div>
+    </div>
+  </footer>
+
+  <script src="productdetails.js"></script>
+</body>
+</html>

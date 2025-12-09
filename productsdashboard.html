@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="productsdashboard.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+  <aside id="sidebar" class="sidebar collapsed">
+
+    <!-- Small Circle Logo (collapsed mode) -->
+    <img id="smallLogo" src="logo-small.png" class="small-logo" alt="Logo" />
+
+    <!-- Big Logo (expanded mode) -->
+    <img id="bigLogo" src="logo-big.jpeg" class="big-logo hidden" alt="Logo" />
+
+    <ul class="menu">
+
+      <li data-page="dashboard.html">
+        <span class="icon">➕</span>
+        <span class="label">Add Product</span>
+      </li>
+
+      <li data-page="products.html">
+        <span class="icon">📦</span>
+        <span class="label">Products</span>
+      </li>
+
+      <li data-page="analytics.html">
+        <span class="icon">📊</span>
+        <span class="label">Analytics</span>
+      </li>
+
+      <li data-page="settings.html">
+        <span class="icon">⚙️</span>
+        <span class="label">Settings</span>
+      </li>
+
+    </ul>
+
+  </aside>
+
+  <main class="main-panel">
+    <header class="topbar">
+      <h2>All Products</h2>
+      <button class="logout-top" id="logoutBtn">Logout</button>
+    </header>
+
+    <section class="content">
+      <div id="productsContainer" class="products-container"></div>
+    </section>
+
+    <div id="editModal">
+    <h2>Edit Product</h2>
+    <label>Name: <input id="editName" disabled></label><br>
+    <label>Price: <input id="editPrice"></label><br>
+    <label>Stock: <input id="editStock"></label><br>
+    <label>Description: <textarea id="editDescription"></textarea></label><br>
+    <button id="saveEditBtn">Save</button>
+    <button class="cancel-btn" onclick="document.getElementById('editModal').style.display='none'">Cancel</button>
+  </div>
+  </main>
+
+  <script src="productsdashboard.js"></script>
+
+</body>
+</html>

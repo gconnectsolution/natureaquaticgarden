@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seller Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      position: relative;
+      width: 100%;
+    }
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .toggle-eye {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 18px;
+      user-select: none;
+      width: 24px;
+      text-align: center;
+      display: inline-block;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .register-link {
+      margin-top: 15px;
+      text-align: center;
+    }
+    .register-link a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .message {
+      margin-top: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+    }
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Seller Login</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required />
+      <div class="form-group">
+        <input type="password" id="password" placeholder="Password" required />
+        <span class="toggle-eye" onclick="toggleVisibility('password', this)">🙈</span>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+    <div class="register-link">
+      New seller? <a href="/seller.html">Register</a>
+    </div>
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    function toggleVisibility(fieldId, icon) {
+      const field = document.getElementById(fieldId);
+      const isVisible = field.type === 'text';
+      field.type = isVisible ? 'password' : 'text';
+      icon.textContent = isVisible ? '🙈' : '👁️';
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const msg = document.getElementById('message');
+      msg.textContent = "";
+      msg.className = "message";
+
+      fetch('http://192.168.1.5:8080/seller/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      })
+      .then(response => {
+        if (response.status === 200) {
+          return response.json().then(data => {
+            const token = data.token;
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            const expiry = payload.exp * 1000;
+
+            sessionStorage.setItem("jwt", token);
+            sessionStorage.setItem("sellerId", payload.id);
+            sessionStorage.setItem("shopName", payload.shopName);
+            sessionStorage.setItem("sellerEmail", payload.sub);
+            sessionStorage.setItem("expiry", expiry);
+
+            msg.textContent = "Login successful!";
+            msg.classList.add('success');
+            setTimeout(() => {
+              window.location.href = "/dashboard.html";
+            }, 1000);
+          });
+        } else {
+          return response.text().then(text => {
+            msg.textContent = text;
+            msg.classList.add('error');
+          });
+        }
+      })
+      .catch(() => {
+        msg.textContent = "Something went wrong.";
+        msg.classList.add('error');
+      });
+    });
+  </script>
+</body>
+</html>

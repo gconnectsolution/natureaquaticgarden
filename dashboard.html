@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Seller Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar" class="sidebar collapsed">
+
+    <!-- Small Circle Logo (collapsed mode) -->
+    <img id="smallLogo" src="logo-small.png" class="small-logo" alt="Logo" />
+
+    <!-- Big Logo (expanded mode) -->
+    <img id="bigLogo" src="logo-big.jpeg" class="big-logo hidden" alt="Logo" />
+
+    <ul class="menu">
+
+      <li data-page="dashboard.html">
+        <span class="icon">➕</span>
+        <span class="label">Add Product</span>
+      </li>
+
+      <li data-page="products.html">
+        <span class="icon">📦</span>
+        <span class="label">Products</span>
+      </li>
+
+      <li data-page="analytics.html">
+        <span class="icon">📊</span>
+        <span class="label">Analytics</span>
+      </li>
+
+      <li data-page="settings.html">
+        <span class="icon">⚙️</span>
+        <span class="label">Settings</span>
+      </li>
+
+    </ul>
+
+  </aside>
+
+  <!-- MAIN PANEL -->
+  <main class="main-panel">
+    <header class="topbar">
+      <h2>Seller Dashboard</h2>
+      <button class="logout-top" id="logoutBtn">Logout</button>
+    </header>
+
+    <section class="content">
+      <h2 id="welcomeText"></h2>
+
+      <!-- PRODUCT FORM (your original content works here) -->
+      <form id="productForm">
+        <input id="name" placeholder="Product Name" />
+        <input id="price" placeholder="Price" />
+        <textarea id="description" placeholder="Description"></textarea>
+        <input id="stock" placeholder="Stock" />
+        <label for="category">Select Category:</label>
+        <select id="category" required>
+        <option value="">Select Category</option>
+        <option value="AQUATIRM_ESSENTIALS">Aquarium Essentials</option>
+        <option value="ROCKS_AND_PEBBLES">Rocks and Pebbles</option>
+        <option value="LIVE_PLANTS">Live Plants</option>
+        <option value="FILTERS">Filters</option>
+        <option value="LIGHTS">Lights</option>
+        <option value="MINIATURES">Miniatures</option>
+        <option value="ACCESSORIES">Accessories</option>
+        </select>
+        <input type="file" id="image" multiple />
+        <button type="submit">Add Product</button>
+      </form>
+
+      <div id="message"></div>
+     <!-- APPLE STYLE PREVIEW MODAL -->
+<div class="apple-preview-modal" id="applePreview">
+  <div class="apple-preview-box">
+
+    <button class="apple-close-btn" onclick="closeApplePreview()">✕</button>
+
+    <h3 class="apple-title" style="grid-column: span 2;">Preview Images</h3>
+
+    <!-- LEFT SIDE DETAILS -->
+    <div class="apple-details" id="appleDetails"></div>
+
+    <!-- RIGHT SIDE IMAGES -->
+    <div id="applePreviewGrid" class="apple-grid"></div>
+
+    <!-- BOTTOM ACTION BUTTONS -->
+    <div class="apple-actions">
+      <button class="apple-cancel" onclick="closeApplePreview()">Cancel</button>
+      <button class="apple-confirm" id="confirmProductBtn">Confirm & Upload</button>
+    </div>
+
+  </div>
+</div>
+    </section>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

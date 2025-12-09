@@ -1,0 +1,292 @@
+
+/* ---------- Base / variables ---------- */
+:root{
+  --green-dark:#003126;
+  --accent:#001d16;
+  --text:#111;
+  --muted:#6b6b6b;
+  --white:#fff;
+  --max-width:1200px;
+  --pad:clamp(16px,2.5vw,40px);
+  --serif: 'Abhaya Libre', serif;
+  --sans: 'Hanken Grotesk', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--text);
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--green-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.header-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.brand-logo {
+  width: 110px;
+  height: auto;
+  object-fit: contain;
+}
+.brand-name {
+  font-family: "Abhaya Libre", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.6rem;
+  color: #fff;
+}
+.account-dropdown {
+  position: absolute;
+  top: 60px; 
+  right: 0;
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  display: none;      
+  z-index: 20;
+}
+
+.account-dropdown.show {
+  display: block;
+}
+
+.account-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+.grid-item {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background: #f3f3f3;
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+}
+
+.grid-item:hover {
+  background: #e0e0e0;
+}
+
+.primary-nav {
+  display: flex;
+  gap: 1.5rem;
+  font-family: "Harmattan", sans-serif;
+  font-size: 1.1rem;
+}
+.primary-nav .nav-link {
+  position: relative;
+    font-size: 0.8rem;
+  color: #fff;
+}
+.primary-nav .nav-link {
+  text-decoration: none;
+}
+
+.primary-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--white);
+  transition: width 0.2s ease-out;
+}
+.primary-nav .nav-link:hover::after,
+.primary-nav .nav-link.active::after {
+  width: 100%;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.delivery-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 1rem;
+  border-radius: 24px;
+  background: var(--white);
+  color: var(--black);
+}
+.delivery-icon {
+  font-size: 1rem;
+}
+.delivery-text {
+  font-family: "Harmattan", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.1;
+}
+.delivery-label {
+  display: block;
+}
+.account-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--black);
+  border: none;
+  font-size: 1.3rem;
+}
+/* ---------- Main layout ---------- */
+.page-main{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:40px var(--pad) 80px;
+}
+
+/* back row */
+.back-row{margin-bottom:18px}
+.back-btn{
+  background:transparent;border:none;font-size:20px;padding:8px 10px;cursor:pointer;color:var(--text)
+}
+
+/* Hero */
+.about-hero{max-width:100%900px;margin: 10px 0 0;text-align:center}
+.hero-title{
+  font-family:var(--serif);
+  font-size:4.2rem;
+  margin:10px 0 10px;
+  color:var(--accent);
+  letter-spacing:.02em;
+  font-weight:700;
+}
+.hero-lead{
+  font-family:var(--serif);
+  font-size:2.5rem;
+  margin:14px 0;
+  font-weight:600;
+  color:var(--text);
+}
+.hero-sub{
+  margin-top:18px;
+  color:var(--muted);
+  margin-left:auto;
+  margin-right:auto;
+
+  font-size:1.2rem;
+}
+
+/* Features grid - two column with stagger */
+.landscapes{
+    font-family: "Abhaya Libre", serif;
+    font-weight: 800;
+    font-style: normal;
+    color: #083423;
+}
+.features-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:40px;
+  align-items:start;
+  margin:56px 0;
+}
+.feature-col{display:flex;flex-direction:column;gap:26px}
+.feature-large h2{font-family:var(--serif);font-size:2.2rem;margin:0;color:var(--accent)}
+.feature h3{font-family:var(--serif);font-size:1.25rem;margin:0 0 8px}
+.feature p{color:var(--muted);margin:0;font-size:0.98rem;line-height:1.7}
+
+/* Slight visual differences to match design: right column top alignment and spacing */
+.feature-spot{padding-left:40px}
+
+/* Offer / product cards row */
+.offer-row{margin-top:40px}
+.section-heading{
+  font-family:var(--serif);
+  font-size:1.75rem;
+  margin:0 0 22px;
+  color:var(--text);
+}
+.cards-row{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+  align-items:stretch;
+}
+.prod-card{
+  width:220px;
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  padding:18px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.prod-card .thumb{
+  height:110px;
+  border-radius:18px;
+  background:linear-gradient(180deg,#eee,#ddd);
+}
+.prod-card h4{font-family:var(--serif);margin:6px 0 0;font-size:1rem}
+.prod-card .stars{color:#f3b400;font-size:0.95rem}
+.prod-card .price{font-family:var(--serif);font-size:1.1rem;margin-top:6px;color:var(--accent)}
+.prod-card .short{color:var(--muted);font-size:0.85rem;margin-top:6px}
+
+/* ---------- Footer ---------- */
+.site-footer{
+  background:#080808;
+  color:#fff;
+  padding:56px var(--pad);
+  margin-top:66px;
+}
+.footer-inner{
+  max-width:var(--max-width);
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.footer-left h3{font-family:var(--serif);font-size:3.5rem;margin:0 0 12px;color:#ddd}
+.footer-left p{margin:6px 0;color:#bbb}
+.footer-logo{width:110px;height:auto;object-fit:contain}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1024px){
+  .features-grid{grid-template-columns:1fr;gap:30px}
+  .feature-spot{padding-left:0}
+  .header-inner{padding:12px 20px}
+  .hero-title{font-size:2.4rem}
+  .cards-row{justify-content:center}
+}
+
+@media (max-width:640px){
+  .brand-logo--tiny{width:54px}
+  .top-nav{display:none}
+  .header-inner{padding:12px 18px}
+  .hero-title{font-size:1.9rem}
+  .hero-lead{font-size:1.05rem}
+  .cards-row{gap:12px}
+  .prod-card{width:46%}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:24px}
+}
